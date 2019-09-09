@@ -1,5 +1,7 @@
 # react-native-samsung-bks
 
+React Native wrapper for the Samsung Blockchain Keystore SDK
+
 ## Getting started
 
 `$ npm install react-native-samsung-bks --save`
