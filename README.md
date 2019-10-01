@@ -1,5 +1,8 @@
 # react-native-samsung-bks
 
+![npm_version](https://img.shields.io/npm/v/react-native-samsung-bks.svg?style=flat-square&colorA=111d28&colorB=1a82ff)
+[![license](https://img.shields.io/badge/license-MIT-6e3bea.svg?style=flat-square&colorA=111d28)](https://github.com/OriginProtocol/react-native-samsung-bks/blob/master/LICENSE)
+
 React Native wrapper for the Samsung Blockchain Keystore SDK
 
 ## Getting started
