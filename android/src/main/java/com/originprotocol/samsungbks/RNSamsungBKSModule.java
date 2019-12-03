@@ -1,5 +1,9 @@
 package com.originprotocol.samsungbks;
 
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -68,6 +72,23 @@ public class RNSamsungBKSModule extends ReactContextBaseJavaModule {
     }
 
     return new String(container);
+  }
+
+  @ReactMethod
+  public void getScwAppId(Promise promise) {
+    try {
+      ReactApplicationContext context = getReactApplicationContext();
+      PackageManager packageManager = context.getPackageManager();
+      ApplicationInfo applicationInfo = packageManager.getApplicationInfo(
+	      context.getPackageName(),
+	      PackageManager.GET_META_DATA
+      );
+      Bundle metaData = applicationInfo.metaData;
+      String key = metaData.getString("SCW_APP_ID");
+      promise.resolve("SCW_APP_ID: " + key);
+    } catch (Exception error) {
+      promise.reject("Could not get SCW_APP_ID");
+    }
   }
 
   @ReactMethod
